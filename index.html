@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सुधा सागर शिविर</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            align-items: top;
+            justify-content: center;
+            height: 100vh;
+	    width: 100vw;
+        }
+    .grid {
+            overflow-x: auto;
+            white-space: nowrap;
+            width: 100vw;
+            scroll-snap-type: x mandatory;
+            grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
+    }
+    img {
+       width: 100%;
+       aspect-ratio: 1 / 1;
+       display: block;
+       object-position: center;
+       object-fit: cover;
+       scroll-snap-align: start;
+       
+    }
+    .blur-load::before {
+       content: "";
+       position: absolute;
+       inset: 0;
+       animation: pulse 2.5s infinite;
+    }
+    .blur-load.loaded::before {
+      content: none;
+    }
+    @keyframes pulse {
+      0% {
+        background-color: rgba(255, 255, 255, 0);
+      }
+      50% {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      100% {
+        background-color: rgba(255, 255, 255, 0);
+      }
+    }
+    .blur-load {
+      position: relative;
+      background-size: cover;
+      width: 100vw;
+      display: inline-block;
+      background-position: center;
+    }
+    .blur-load.loaded > img {
+       opacity: 1;
+    }
+    .blur-load > img {
+       opacity: 0;
+       transition: opacity 200ms ease-in-out;
+    }
+            .grid-container {
+            position: relative;
+            width: 100vw;
+            overflow: hidden;
+        }
+            .button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
+            .button-left {
+            left: 0;
+        }
+        .button-right {
+            right: 0;
+        }
+        .greeting-container {
+            text-align: center;
+            height: 2000px;
+	    width: 100vw;
+	    word-wrap: break-word;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 { 
+            color: #ff9a3c;
+            font-size: 36px;
+            margin: 0;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif; 'Arial', sans-serif;
+            background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+            padding: 10px;
+            color: #5c5470;
+            font-size: 30px;
+            margin: 0;
+        }
+	h3 {
+            height: 30px;
+            font-family: 'Playfair Display', serif; 'Arial', sans-serif;
+            color: black;
+            font-size: 28px;
+            margin: 0;
+	}
+	h5 {
+            height: 30px;
+            font-family: 'Playfair Display', serif; 'Arial', sans-serif;
+            color: #36454F;
+            font-size: 28px;
+            margin: 0;
+	}
+
+        .message {
+             font-family: 'Playfair Display', serif; 'Arial', sans-serif;
+             padding: 10px;
+             margin-bottom: 30px;
+             width: 60%;
+   	     clear: both;
+   	     word-wrap: break-word; /* Allow long words to break and wrap */
+  	     overflow-wrap: break-word;
+        }
+	.message.left {
+             background-color: #C6DAE7; /* Left messages have a light gray background */
+             float: left; /* Float left for left-aligned messages */
+             border-top-right-radius: 30px;    /* top-left corner */
+             border-bottom-right-radius: 30px; 
+             clear: both; /* Clear the float to ensure proper alignment */
+             color: #5f6769;
+             text-align: left;
+             padding: 40px;
+       }
+       .message.right {
+   	 	 background-color: #C6DAE7; /* Right messages have a blue background */
+   		 color: #708090; /* White text color for right messages */
+   		 padding: 40px;
+   		 text-align: right;
+   	         border-top-left-radius: 30px;    /* top-left corner */
+                 border-bottom-left-radius: 30px; 
+   		 float: right; /* Float left for left-aligned messages */
+   		 clear: both; /* Clear the float to ensure proper alignment */
+      }
+     .about-section {
+        background-color: #F5FEFD; /* Light gray background color for the about section */
+        padding: 20px;
+        text-align: center;
+     }
+     strong {
+            font-weight: bold;
+     }
+.button-86 {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  left: 30vw;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-86::after,
+.button-86::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button-86::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.button-86::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button-86:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button-86:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button-86:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+    .contact-section {
+      background-color: #e6f7ff; /* Light blue background color for the contact section */
+      padding: 40px;
+      text-align: center;
+    }
+a {
+      text-decoration: none;
+      color: black;
+    }
+    </style>
+</head>
+<body>
+    <div class="greeting-container">
+	    </br>
+	    <h1>जय जिनेन्द्र</h2>
+	 </br>
+	 <h2>सुधा सागर शिविर</h2>
+	 </br>
+	 <h3 id="typingText"></h3>
+	 </br>
+	 </br>
+	       <p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;">हम लोग, <strong>विद्वान श्री सुदेश जैन शास्त्री व अक्षत जैन शास्त्री</strong> के मार्गदर्शन अनुसार, जरूरतमंद लोगों के यहां वेकेशन कैम्प (शिविर) लगाते हैं। हमारे शिविर की मुख्य नींव धर्म के ज्ञान और शिक्षा पर आधारित है।</p>
+         
+	       <p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;">शिविर में <strong>विद्वान श्री सुदेश जैन शास्त्री व अक्षत जैन शास्त्री</strong> जी द्वारा पूजन अर्पण, स्तोत्र उच्चारण, धर्म पर शिक्षा, और संस्थान द्वारा प्रमाणपत्र आदि तक प्रदान किया जाता है।</p>
+	 
+	       <p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;">यदि किसी महानुभव को अपने मंदिर में शिविर लगवाना हो, तो नीचे दिए गए बटन को दबाएं। या आप हमसे सीधे  व्हाट्सएप या कॉलिंग के माध्यम से भी संपर्क कर सकते हैं।</p>
+	 <button class="button-86" role="button" onclick="redirectToPage()">शिविर लगवाए</button>
+         </br>
+         <script>
+    function redirectToPage() {
+      // Replace 'destination.html' with the actual path of the page you want to redirect to
+      window.location.href = 'form/';
+    }
+    </script>
+    
+            <p style="display: flex; justify-content: center; font-size: 20px; color: #5c5470;font-weight: bold;">शिविर में करवाएं जाने वाले कार्यक्रम:</p></li>
+            <li><p style="display: flex; justify-content: center; font-size: 16px; color: #848884; font-weight: bold;">पूजा अर्पण</p></li>
+            <li><p style="display: flex; justify-content: center; font-size: 16px;  color: #848884; font-weight: bold;">स्तोत्र उच्चारण</p></li>
+            <li><p style="display: flex; justify-content: center; font-size: 16px;  color: #848884; font-weight: bold;">मानवता पर व्याख्यान</p></li>
+            <li><p style="display: flex; justify-content: center; font-size: 16px;  color: #848884; font-weight: bold;">धर्म की जानकारी</p></li>
+            <li><p style="display: flex; justify-content: center; font-size: 16px;  color: #848884; font-weight: bold;">संस्कार पूजन</p></li>
+            <li><p style="display: flex; justify-content: center; font-size: 16px;  color: #848884; font-weight: bold;">पूजन विधि</p></li>
+            <li><p style="display: flex; justify-content: center; font-size: 16px;  color: #848884; font-weight: bold;">शिक्षा और परीक्षाएँ</p></li>
+            <li><p style="display: flex; justify-content: center; font-size: 16px;  color: #848884; font-weight: bold;">संस्थान का प्रमाणपत्र और इनाम</p></li>
+            <li><p style="display: flex; justify-content: center; font-size: 16px;  color: #848884; font-weight: bold;">इत्यादि...</p></li>
+	 <div id="chat-box">
+            <!-- Left-aligned message -->
+            <div class="message right">
+                <span style="font-size: larger;"><strong>हमारे विद्वान:</strong></span>
+		<h4>विद्वान श्री सुदेश जैन शास्त्री</h4>
+		<h4>संगानेर संस्थान से जैन दर्शन के विद्वान</h4>
+		<h4>7 वर्षों का अनुभव और पारुषण</h4>
+		<h4>एक ईमानदार और आदर्शनीय व्यक्ति</h4>
+            </div>
+            <div class="message left">
+                <span style="font-size: larger;"><strong>हमारे विद्वान:</strong></span>
+		<h4>विद्वान श्री अक्षत जैन शास्त्री</h4>
+		<h4>संगानेर संस्थान से जैन दर्शन के विद्वान</h4>
+		<h4>7 वर्षों का अनुभव और पारुषण</h4>
+		<h4>एक ईमानदार और आदर्शनीय व्यक्ति</h4>
+            </div>
+            <!-- Right-aligned message -->
+            <div class="message right">
+                <span style="font-size: larger;"><strong>हमारे कार्य:</strong></span>
+                <h4>धर्म शिविरों का आयोजन</h4>
+                <h4>शिविर में श्रेष्ठ विद्वानों की उपस्थिति</h4>
+                <h4>धर्म से संबंधित परीक्षाएं और इनाम</h4>
+                <h4>संस्थान द्वारा प्रमाणपत्र</h4>
+            </div>
+            <div class="message left">
+                <span style="font-size: larger;"><strong>हमारी विधिया:</strong></span>
+		<h4>आचार्य परम्परा</h4>
+                <h4>सम्यक दृष्टि</h4>
+                <h4>सत्य </h4>
+                <h4>अपरिग्रह इत्यादि..</h4>
+            </div>
+            <div class="message right">
+                <span style="font-size: larger;"><strong>भारत में एक श्रेष्ठ शिविरों में से एक:</strong></span>
+                <h4>15+ राज्यों में आयोजित एवं संचालित शिविर</h4>
+                <h4>प्रतिष्ठित संस्थान के विद्वानों द्वारा मार्गदर्शन</h4>
+                <h4>प्रेम, इज्जत, और शिक्षा पर आधारित</h4>
+            </div>          
+	    <!-- Continue adding messages with appropriate classes as needed -->
+        </div>
+                    <div class="grid-container">
+            	<div class="grid">
+	       <div class="blur-load" style="background-image: url(images/1-small.webp)">
+	       <img src="images/1.webp" loading="lazy" />
+	       </div>
+	       <div class="blur-load" style="background-image: url(images/2-small.webp)">
+	       <img src="images/2.webp" loading="lazy" />
+	       </div>
+	       <div class="blur-load" style="background-image: url(images/3-small.webp)">
+	       <img src="images/3.webp" loading="lazy" />
+	       </div>
+	       <div class="blur-load" style="background-image: url(images/4-small.webp)">
+	       <img src="images/4.webp" loading="lazy" />
+	       </div>
+	       <div class="blur-load" style="background-image: url(images/5-small.webp)">
+	       <img src="images/5.webp" loading="lazy" />
+	       </div>
+	       <div class="blur-load" style="background-image: url(images/6-small.webp)">
+	       <img src="images/6.webp" loading="lazy" />
+	       </div>
+	       <div class="blur-load" style="background-image: url(images/7-small.webp)">
+	       <img src="images/7.webp" loading="lazy" />
+	       </div>
+	       <div class="blur-load" style="background-image: url(images/8-small.webp)">
+	       <img src="images/8.webp" loading="lazy" />
+	       </div>
+	       <div class="blur-load" style="background-image: url(images/9-small.webp)">
+	       <img src="images/9.webp" loading="lazy" />
+	       </div>
+	       <div class="blur-load" style="background-image: url(images/10-small.webp)">
+	       <img src="images/10.webp" loading="lazy" />
+	       </div>
+	       </div>
+	              <button class="button button-left" onclick="scrollGrid(-1)"><img src="https://svgshare.com/i/13ai.svg" alt="Left" style="width: 40px; height: 40px;"></button>
+<button class="button button-right" onclick="scrollGrid(1)"><img src="https://svgshare.com/i/13b_.svg" alt="Right" style="width: 40px; height: 40px;"></button>
+       </div>
+       <script>
+          const blurDivs = document.querySelectorAll(".blur-load")
+	  blurDivs.forEach(div => {
+            const img = div.querySelector("img")
+	    function loaded() {
+                div.classList.add("loaded")
+	    }
+	    if (img.complete) {
+              loaded()
+	    } else {
+               img.addEventListener("load", loaded)
+	    }
+	  })
+       </script>
+       <script>
+    const grid = document.querySelector('.grid');
+    const scrollStep = 100; // Scroll width in vw units
+
+    function scrollGrid(direction) {
+        const scrollAmount = direction * scrollStep;
+        grid.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+</script>
+	<div class="about-section">
+
+		<h5>विश्वास</h5>
+                    <p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;">हम पहले भी बहुत सी जगहों पर शिविर लगा चुके हैं और उच्च गुणवत्ता वाली शिक्षा प्रदान करके हमने वहां के लोगों को जैन धर्म के प्रति जागरूक किया है। </p><p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;">हमारे <strong>विद्वान श्री सुदेश जैन शास्त्री व अक्षत जैन शास्त्री</strong> ने अपनी जीवन की कठिन मेहनत और विश्वास के साथ काफी लोगों को उच्च शिक्षा और धर्म के प्रति जागरूकता फैलाने के लिए निरंतर प्रयास किया है।</p><p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;">हमने राजस्थान, ओडिशा, मध्य प्रदेश, पश्चिम बंगाल आदि जगहों पर शिविर लगा कर उनकी काफी सहायता की है और इसी तरह हम आगे भी यह कार्य जारी रखेंगे। लोगों का हम पर विश्वास और हमारा प्रयास यही हमारे शिविर की मुख्य नींव है।</p>
+	        <h5>महत्व</h5>
+                    <p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;">हम सामाजिक से कोई भी पैसे या सामान की मांग नहीं करते, और न ही उन्हें देने पर मजबूर करते हैं। लोगों की तरफ़ से उनकी इच्छानुसार दिए जाने वाला प्यार और राशि हमारे लिए पर्याप्त है और हम उसे सहज रूप से स्वीकार करते हैं।</p>
+                    <p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;">"धन की निश्चित मात्रा का निर्धारण करके जिनवाणी नहीं बेचते..." - आदेश अनुसार, सुधा सागर जी महाराज जी</p>
+                 <h5>हमारा लक्ष्य</h5>
+                    <p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;">हम लोग लोगों को बुलाने और इच्छानुसार उनके यहां शिविर लगा कर उन्हें जैन धर्म के प्रति सही मार्गदर्शन करते हैं। और वहां के बच्चों और बड़ों को शिक्षा प्रदान करते हैं ताकि वे सभी लोग हमारे संस्कार और जैन धर्म के प्रति सचेत रूप से जागरूक रहें।</p><p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;"> आगे भी लोगों को जैन धर्म के प्रति सचेत कर सके। </p><p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;">हमारे <strong>विद्वान श्री सुदेश जैन शास्त्री व अक्षत जैन शास्त्री</strong> अपनी कठिन मेहनत और निरंतर प्रयासों से लोगों के इच्छानुसार वैकेशन कैम्प लगवा कर उन्हें पूजा अर्पण, धर्म की शिक्षा और कई तरह के प्रतियोगिताओं करवा कर उन्हें एक अच्छी जीवन शैली की ओर मार्गदर्शन करते हैं।</p><p style="font-family: 'Arial', sans-serif; font-weight: 300; color: grey;"> आगे भी हमारा यही निरंतर प्रयास रहेगा कि आप लोगों के यहां वेकेशन कैम्प लगा कर आपको धर्म के प्रति शिक्षित कर सके और लोगों के बीच प्यार, इज्जत और शिक्षा को बरकरार रख सके...</p>
+	</div>
+	<div class="contact-section">
+            <h5>संपर्क करें</h5>
+            <p>यदि कोई प्रश्न या सुझाव है, तो कृपया हमसे संपर्क करें!</p>
+            <p>----------------------------------------</p>
+            <p style="display: flex; justify-content: center; font-size: 20px; font-weight: bold;">विद्वान</p>
+	    <p style="display: flex; justify-content: center;"><span></span><span>+917357392522</span></p>
+	    <p style="display: flex; justify-content: center;"><span></span><span>+919555795916</span></p>
+	    <p style="display: flex; justify-content: center;"><span></span><span>sudeshagarwal39@gmail.com</span></p>
+	    <p style="display: flex; justify-content: center;"><span></span><span>akshat091989198@gmail.com</span></p>
+	    <p style="display: flex; justify-content: center;"><a href="https://wa.me/917357392522?text=जय जिनेन्द्र,%20मुझे%20शिविर%20के%20बारे%20में%20कुछ%20चर्चा%20करनी%20है...">Whatsapp</a></p>
+	    <p>----------------------------------------</p>
+            <p style="display: flex; justify-content: center; font-size: 20px; font-weight: bold;">तकनीकी टीम</p>
+            <p style="display: flex; justify-content: center;"><span></span><span>+918239278588</span></p>
+            <p style="display: flex; justify-content: center;"><span></span><span>physicistsumit@gmail.com</span></p>
+            <p style="display: flex; justify-content: center;"><a href="https://wa.me/918239278588?text=जय जिनेन्द्र,%20मुझे%20टेक%20टीम%20से%20कुछ%20बात%20करनी%20है...">Whatsapp</a></p>
+           
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

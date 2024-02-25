@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>सुधा सागर शिविर</title>
+</head>
+<body>
+
+  <header>
+    <h1>सुधा सागर शिविर</h1>
+    <h2>फोर्म</h2>
+  </header>
+
+  <section class="main-content">
+    <p>शिविर लगवाने के लिए नीचे दिए गए फॉर्म को भरे:</p>
+    <form action="process_form.php" method="post" class="contact-form">
+      <label for="name"> नाम</label>
+      <input type="text" id="name" name="name" placeholder="आपका नाम" required>
+      <label for="input1">मोबाइल नंबर</label>
+      <input type="text" id="input1" name="input1" placeholder="मोबाइल नंबर"  required>
+      <label for="input2"> पता</label>
+      <input type="text" id="input2" name="input2" placeholder="आपका पूरा पता"  required>
+      <label for="input3">
+
+समाज का नाम</label>
+      <input type="text" id="input3" name="input3" placeholder="
+
+समाज का नाम"  required>
+      <label for="input4">कितने घर का समाज है</label>
+      <input type="text" id="input4" name="input4" placeholder="कितने घर का समाज है"  required>
+
+      <label for="input7">बच्चों की संख्या</label>
+      <input type="text" id="input7" name="input7" placeholder="संस्था में बैठने वाले बच्चों की संख्या"  required>
+
+      <label for="input8">बड़ो की संख्या</label>
+      <input type="text" id="input8" name="input8" placeholder="शिविर में बड़ो की संख्या"uired>
+      <label for="input5">कोनसे ग्रंथ पढने के इच्छुक है</label>
+      <input type="text" id="input5" name="input5" placeholder="शिविर में कोनसे ग्रन्थ पढ़ने के लिए इच्छुक है"  required>
+      <label for="input6">शिविर का अंतराल</label>
+      <input type="text" id="input6" name="input6" placeholder="शिविर कब से कब तक लगवाना चाहते हैं"  required>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+      <button class="button-1" onclick="goBack()"> पिछे जाये</button>
+       <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+  </br>
+</br>
+  <footer>
+    <p>&copy; 2024 Sudha sagar shivir. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
